@@ -1,0 +1,25 @@
+{
+  "name": "redux-experiment-field",
+  "version": "1.0.0",
+  "description": "experiment field of Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawaiiey/redux-experiment-field.git"
+  },
+  "author": "hawaiiey",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hawaiiey/redux-experiment-field/issues"
+  },
+  "homepage": "https://github.com/hawaiiey/redux-experiment-field#readme",
+  "dependencies": {
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1"
+  }
+}
