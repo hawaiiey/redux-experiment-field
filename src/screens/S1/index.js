@@ -13,6 +13,7 @@ class S1 extends Component {
     return (
       <Fragment>
         <span>{count}</span>
+        <br />
         <button onClick={() => add(1)}>+</button>
         <button onClick={() => reduce(1)}>-</button>
       </Fragment>
