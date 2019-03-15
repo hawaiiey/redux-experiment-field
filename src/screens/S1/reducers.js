@@ -1,9 +1,13 @@
-import { combineReducers } from 'redux'
 import { handleActions } from 'redux-actions'
-import { ADD, REDUCE } from './constants'
+import { ADD, REDUCE, REQUEST_START, REQUEST_SUCCESS, REQUEST_ERROR } from './constants'
 
 const initialState = {
   count: 0,
+  dataSource: {
+    loading: false,
+    error: false,
+    data: {},
+  },
 }
 
 // function counter(state = initialState, action) {
@@ -21,11 +25,12 @@ const initialState = {
 //   }
 // }
 
-const counter = handleActions({
-  [ADD]: (state, action) => ({ count: state.count + action.payload }),
-  [REDUCE]: (state, action) => ({ count: state.count - action.payload }),
+const s1Reducer = handleActions({
+  [ADD]: (state, action) => Object.assign({}, state, { count: state.count + action.payload }),
+  [REDUCE]: (state, action) => Object.assign({}, state, { count: state.count - action.payload }),
+  [REQUEST_START]: (state, action) => Object.assign({}, state, { dataSource: { loading: true, error: false, data: {} } }),
+  [REQUEST_SUCCESS]: (state, action) => Object.assign({}, state, { dataSource: { loading: false, error: false, data: action.payload.data } }),
+  [REQUEST_ERROR]: (state, action) => Object.assign({}, state, { dataSource: { loading: false, error: true, data: {} } }),
 }, initialState)
 
-export default combineReducers({
-  counter,
-})
+export default s1Reducer

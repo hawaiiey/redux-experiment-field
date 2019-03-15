@@ -5,7 +5,7 @@ import { add, reduce } from './actions'
 class S1 extends Component {
   render () {
     const {
-      s1: { counter: { count } },
+      s1: { count },
       add,
       reduce,
     } = this.props
