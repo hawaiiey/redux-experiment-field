@@ -33,7 +33,10 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  query: payload => request(payload)(dispatch),
+  // redux-thunk
+  // query: payload => request(payload)(dispatch),
+  // redux-promise
+  query: payload => dispatch(request(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RequestComp)
