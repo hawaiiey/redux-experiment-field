@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { request } from './actions'
+import { requestStart } from './actions'
 
 class RequestComp extends Component {
   componentDidMount () {
@@ -36,7 +36,7 @@ const mapDispatchToProps = dispatch => ({
   // redux-thunk
   // query: payload => request(payload)(dispatch),
   // redux-promise
-  query: payload => dispatch(request(payload)),
+  query: payload => dispatch(requestStart(payload)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(RequestComp)

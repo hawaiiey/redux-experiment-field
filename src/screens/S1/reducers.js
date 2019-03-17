@@ -32,7 +32,7 @@ const s1Reducer = handleActions({
   [REQUEST_SUCCESS]: (state, action) => Object.assign({}, state, { dataSource: { loading: false, error: false, data: action.payload.data } }),
   [REQUEST_ERROR]: (state, action) => Object.assign({}, state, { dataSource: { loading: false, error: true, data: {} } }),
   // redux-promise
-  [REQUEST]: (state, action) => Object.assign({}, state, { dataSource: { loading: false, error: action.error || false, data: action.payload } }),
+  // [REQUEST]: (state, action) => Object.assign({}, state, { dataSource: { loading: false, error: action.error || false, data: action.payload } }),
 }, initialState)
 
 export default s1Reducer

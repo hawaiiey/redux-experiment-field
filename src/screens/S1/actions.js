@@ -15,19 +15,19 @@ import { ADD, REDUCE, REQUEST_START, REQUEST_SUCCESS, REQUEST_ERROR, REQUEST } f
 //   }
 // }
 
-const { add, reduce, requestStart, requestSuccess, requestError, request } = createActions({
+const { add, reduce, requestStart, requestSuccess, requestError } = createActions({
   [ADD]: (payload = 1) => payload,
   [REDUCE]: (payload = 1) => payload,
   [REQUEST_START]: payload => ({ startTime: Date.now() }),
   [REQUEST_SUCCESS]: payload => ({ successTime: Date.now(), data: payload }),
   [REQUEST_ERROR]: payload => ({ errorTime: Date.now(), error: payload }),
   // redux-promise
-  [REQUEST]: async payload => {
-    const res = await fetch('https://api.github.com/')
-      .then(response => response.json())
+  // [REQUEST]: async payload => {
+  //   const res = await fetch('https://api.github.com/')
+  //     .then(response => response.json())
 
-    return res
-  },
+  //   return res
+  // },
 })
 
 // redux-thunk
@@ -43,5 +43,8 @@ const { add, reduce, requestStart, requestSuccess, requestError, request } = cre
 export {
   add,
   reduce,
-  request,
+  // request,
+  requestStart,
+  requestSuccess,
+  requestError,
 }
