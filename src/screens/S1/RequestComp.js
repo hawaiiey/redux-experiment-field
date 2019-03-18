@@ -17,7 +17,7 @@ class RequestComp extends Component {
 
     return (
       <Fragment>
-        {Object.entries(data).map(([key, value]) => (
+        {data && Object.entries(data).map(([key, value]) => (
           <div key={key}>
             <span>{key}: </span>
             <span>{value}</span>
