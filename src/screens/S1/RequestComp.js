@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { requestStart } from './actions'
 
 class RequestComp extends Component {
-  componentDidMount () {
-    const { query } = this.props
+  // componentDidMount () {
+  //   const { query } = this.props
 
-    query()
-  }
+  //   query()
+  // }
 
   render () {
     const {
