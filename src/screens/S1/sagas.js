@@ -1,4 +1,4 @@
-import { call, put, takeEvery, take, fork, cancel } from 'redux-saga/effects'
+import { call, put, takeEvery, take, fork, cancel, cancelled } from 'redux-saga/effects'
 import { ADD, REQUEST_START } from './constants'
 import { requestSuccess, requestError, requestStart } from './actions'
 
@@ -11,6 +11,8 @@ function* request(action) {
     yield put(requestSuccess(res))
   } catch (e) {
     yield put(requestError(e))
+  } finally {
+    if (yield cancelled()) console.log('fork finally!!!')
   }
 }
 
