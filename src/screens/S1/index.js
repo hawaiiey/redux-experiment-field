@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { add, reduce } from './actions'
+import RequestComp from './RequestComp'
 
 class S1 extends Component {
   render () {
@@ -16,14 +17,18 @@ class S1 extends Component {
         <br />
         <button onClick={() => add(1)}>+</button>
         <button onClick={() => reduce(1)}>-</button>
+        <RequestComp />
       </Fragment>
     )
   }
 }
 
-const mapStateToProps = state => ({
-  s1: state.s1,
-})
+const mapStateToProps = (state, routeProps) => {
+  console.log('get route props', routeProps)
+  return {
+    s1: state.s1,
+  }
+}
 
 const mapDispatchToProps = dispatch => ({
   add: payload => dispatch(add(payload)),
