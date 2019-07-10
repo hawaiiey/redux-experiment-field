@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import ThemeProvider from './ThemeProvider'
+import ThemeConsumer1 from './ThemeConsumer1'
+import ThemeConsumer2 from './ThemeConsumer2'
 // import { Router, Route, browserHistory } from 'react-router'
 // import { createStore, applyMiddleware } from 'redux'
 // import { Provider } from 'react-redux'
@@ -32,9 +35,10 @@ export default class App extends Component {
   // }
   render () {
     return (
-      <div>
-        context
-      </div>
+      <ThemeProvider>
+        <ThemeConsumer1 />
+        <ThemeConsumer2 />
+      </ThemeProvider>
     )
   }
 }
