@@ -1,5 +1,6 @@
 import React from 'react'
 import { ThemeContext } from './ThemeProvider'
+import Text1 from './Text1'
 
 export default function ThemeConsumer1() {
   return (
@@ -7,7 +8,7 @@ export default function ThemeConsumer1() {
       {
         (ctx) => {
           console.log('Consumer', 1, 'render!!!')
-          return <div style={{ color: ctx.color1 }}>context1</div>
+          return <Text1 style={{ color: ctx.color1 }}>context1</Text1>
         }
       }
     </ThemeContext.Consumer>
