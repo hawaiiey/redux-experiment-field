@@ -1,10 +1,6 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 
-export default class Text2 extends Component {
-  shouldComponentUpdate () {
-    return false
-  }
-
+export default class Text2 extends PureComponent {
   render () {
     console.log('Text', 2, 'update')
 
