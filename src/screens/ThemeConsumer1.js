@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from './ThemeProvider'
 import Text1 from './Text1'
 
@@ -7,6 +7,9 @@ export default function ThemeConsumer1() {
   const textProps = {
     style: ctx.style1,
   }
+  const renderContent = useMemo(() => (
+    <Text1 {...textProps}>context1</Text1>
+  ), [...Object.values(textProps)])
   console.log('Consumer', 1, 'render!!!', ctx)
 
   // return (
@@ -23,7 +26,5 @@ export default function ThemeConsumer1() {
   //     }
   //   </ThemeContext.Consumer>
   // )
-  return (
-    <Text1 {...textProps}>context1</Text1>
-  )
+  return renderContent
 }
