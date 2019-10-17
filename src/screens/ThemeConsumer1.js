@@ -1,3 +1,8 @@
+/**
+ * 模仿 react-redux 用 useMemo 做优化
+ * 对组件引用的 state 做浅比较
+ * 避免与该 state 无关的组件做没必要的更新
+ */
 import React, { useContext, useMemo } from 'react'
 import { ThemeContext } from './ThemeProvider'
 import Text1 from './Text1'

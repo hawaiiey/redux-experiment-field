@@ -1,3 +1,7 @@
+/**
+ * 没有做任何优化
+ * 只要 state 更新，就会触发该 Consumer 组件更新
+ */
 import React, { useContext } from 'react'
 import { ThemeContext } from './ThemeProvider'
 import Text2 from './Text2'
