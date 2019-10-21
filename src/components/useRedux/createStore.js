@@ -24,11 +24,17 @@ export function createStore(reducer) {
   }
 }
 
-export function useStore() {
+export function useStore(selector) {
   const contextState = useContext(StateContext)
 
+  // 通过 selector 获取对应 state
+  let selectedState = null
+  if (selector) {
+    selectedState = selector(contextState)
+  }
+
   return [
-    contextState,
+    selectedState || contextState,
     dispatch,
   ]
 }
